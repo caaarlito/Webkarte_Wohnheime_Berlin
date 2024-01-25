@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wohnheimkarte Berlin</title>
+	<link rel="icon" type="image/x-icon" href="img/icon.png">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.15.1/css/ol.css" type="text/css">
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.15.1/build/ol.js"></script>
+</head>
+<body>
+
+<div id="heading" class="heading" onmouseover="changeWidth(false)">
+    <div class="left-content">
+        <a href="index.html">
+            <img src="img/icon.png" alt="Wohnheim Icon" class="icon-img">
+        </a>
+        <span class="title">Wohnheime des Studierendenwerks Berlin</span>
+    </div>
+    <a href="https://www.stw.berlin/" target="_blank">
+        <img src="img/logo_stw.svg" alt="Logo Studierendenwerk Berlin" class="stw-img">
+    </a>
+</div>
+
+<div id="filter" onmouseover="changeWidth(false)">
+    <p></p>
+    <span id="filter_span" class="filter_text">Wohnheime filtern: </span>
+	<br>
+    <table class="filter_text">
+        <tr>
+            <td>Dusche: </td>
+            <td>
+                <select id="dusche" class="optionbox">
+                    <option value="option1">egal</option>
+                    <option value="option2">ja</option>
+                    <option value="option3">nein</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>Küche: </td>
+            <td>
+                <select id="kueche" class="optionbox">
+                    <option value="option1">egal</option>
+                    <option value="option2">ja</option>
+                    <option value="option3">nein</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>möbliert: </td>
+            <td>
+                <select id="moebliert" class="optionbox">
+                    <option value="option1">egal</option>
+                    <option value="option2">ja</option>
+                    <option value="option3">nein</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>barrierefrei: </td>
+            <td>
+                <select id="barrierefrei" class="optionbox">
+                    <option value="option1">egal</option>
+                    <option value="option2">ja</option>
+                    <option value="option3">nein</option>
+                </select>
+            </td>
+        </tr>
+    </table>
+
+    <p class="filter_text">
+        <label for="wartezeit"> Verfügbar/Wartezeit:</label>
+			<br>
+                <select id="wartezeit" class="optionbox" style=width: 150px>
+                    <option value="option1">egal</option>
+					<option value="option2">über 18 Monate</option>
+                    <option value="option3">7 - 18 Monate</option>
+                    <option value="option4">unter 7 Monate</option>
+                </select>
+    </p>
+	
+	<p class="filter_text">
+        <label for="personen"> Wohnung/Zimmer für:</label>
+			<br>
+                <select id="personen" class="optionbox" style=width: 150px>
+                    <option value="option1">egal</option>
+					<option value="option2">1 Person</option>
+                    <option value="option3">2 Person</option>
+                    <option value="option4">3 Person</option>
+					<option value="option5">4 Person</option>
+					<option value="option6">5 Person</option>
+                </select>
+    </p>
+
+    <p class="filter_text">
+        <label for="maxMietpreis"> Maximaler Mietpreis in €:</label>
+		<br>
+        <input type="number" id="maxMietpreis" name="maxMietpreis" placeholder="Max. Mietpreis in Euro" min="1">
+    </p>
+
+    <p class="filter_text">
+        <label for="minWohn"> Minimale Wohnfläche in m²:</label>
+		<br>
+        <input type="number" id="minWohn" name="minWohn" placeholder="Min. Wohnfläche in m²" min="1">
+    </p>
+</div>
+
+<div id="map" onmouseover="changeWidth(true)" onmouseout="changeWidth(false)"></div>
+
+<div id="map-popup" class="ol-popup">
+    <a href="#" id="popup-closer" class="ol-popup-closer"></a>
+    <div id="popup-content"></div>
+</div>
+
+<div id="impressum" class="impressum" onmouseover="changeWidth(false)">
+    <span class="impressum_text">Erstellt von Carlo Persicke und Luca Emden-Weinert</span>
+</div>
+
+
+<script src="openlayers.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
