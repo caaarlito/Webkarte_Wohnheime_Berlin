@@ -1,4 +1,4 @@
-# Webkarte_Wohnheime_Berlin
+# Webkartenanwendung für Wohnheime des Studierendenwerkes Berlin
 
 Projekt von Luca Emden-Weinert und Carlo Persicke
 
